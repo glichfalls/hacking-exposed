@@ -12,8 +12,10 @@ Nein, weil durch die INPUT DROP policy alle Anfragen von aussen nicht beantworte
 
 ## Wie lautet der ganze Befehl, um Aufgabe 8 zu erfüllen?
 
- sudo iptables -A INPUT -p tcp -d 192.168.68.128 --dport 80 -j ACCEPT
+`sudo iptables -A INPUT -p tcp -d 192.168.68.128 --dport 80 -j ACCEPT`
 
 ## Wie lautet der ganze Befehl, um Aufgabe 9 zu erfüllen? Verwenden Sie als Action DROP oder REJECT? Begründen Sie.
 
- sudo iptables -A INPUT -p tcp -d 192.168.68.128 --dport 80 -m range --src-range 13.13.13.13-13.13.23.23 -j DROP
+`sudo iptables -A INPUT -p tcp -d 192.168.68.128 --dport 80 -m range --src-range 13.13.13.13-13.13.23.23 -j DROP`
+
+Ich verwende DROP, weil der Angreifer in ein timout laufen soll, um die Anfragen weiter zu reduzieren
